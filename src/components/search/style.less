@@ -1,6 +1,130 @@
 @import '~style/helpers';
 
-.search {
-	padding: 56px 20px;
-	background: #EEE;
+@smallsmartphones: ~"only screen and (max-width: 329px)";
+@smartphones: ~"only screen and (max-width: 479px)";
+@tablets: ~"only screen and (min-width: 479px) and (max-width: 959px)";
+@hqscreen: ~"only screen and (min-width: 1000px) and (max-width: 1920px)";
+
+
+body{
+	display: flex;
+	flex-direction:column;
+}
+
+.btlikeLogo{
+	width: 220px;
+}
+
+.searchBlock {
+	padding: 10px 20px 56px 20px;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	flex:1;
+}
+
+.searchBox{
+	border-width: 1px;
+	border-style: solid;
+	border-color: @deepgrey;
+	border-right-width: 0;
+
+	width: 600px;
+	height: 20px;
+	padding: 10px;
+	font-size: 16px;
+
+	@media @smartphones {
+		width: 310px;
+		border-right-width:1px;
+
+		& + .searchButton{
+			display: none;
+		}
+	}
+
+	@media @tablets{
+		width: 400px;
+		border-right-width:1px;
+
+		& + .searchButton{
+			display: none;
+		}
+	}
+
+	@media @smallsmartphones{
+		width: 280px;
+		border-right-width:1px;
+
+		& + .searchButton{
+			display: none;
+		}
+	}
+
+	@media @hqscreen {
+		width: 800px;
+	}
+
+	&:hover{
+		border-color:#AAAAAA;
+
+	}
+
+	&:focus{
+		border-color:@blue;
+	}
+
+	& + .searchButton{
+		width: 42px;
+		height: 42px;
+		background-color: @blue;
+
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+}
+
+.searchBoxContainer{
+	display: flex;
+}
+
+.searchBox:focus{
+	outline: none;
+}
+
+.about{
+	align-self:flex-end;
+	margin-top: 20px;
+
+	& > a{
+		color: @blue;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	& > a:hover{
+		color: @lightblue;
+	}
+}
+
+.confirmSearchButton{
+	width:100px;
+	height: 40px;
+	border-width: 1px;
+	border-color: @grey;
+
+	display: none;
+
+	@media @smartphones {
+		display: block;
+	}
+
+	@media @tablets{
+		display: block;
+	}
+
+	@media @smallsmartphones{
+		display: block;
+	}
+
 }
